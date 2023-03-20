@@ -28,11 +28,17 @@
 
 ## How to try replication
 1. Make changes in the terraform file (or add more tf files)
-2. Run the commands:
+2. Run command:
    ```
    ./yor_150_<os and arch> tag -d . --tag-groups code2cloud --parsers Terraform
-   ./yor_170_<os and arch> tag -d . --tag-groups code2cloud --parsers Terraform
-   ./yor_170_<os and arch> tag -d . --tag-groups code2cloud --parsers Terraform --tag-prefix cloudfix:linter_
    ```
+3. Check whether issue is replicated.
+4. Undo changes
+5. Run command:
+   ```
+   ./yor_170_<os and arch> tag -d . --tag-groups code2cloud --parsers Terraform
+   ```
+6. Undo changes
+7. Check whether issue is replicated.  
    Note: We have added binaries for linux-amd64 and linux-arm64. Let the Cloudfix Linter team know if binaries for other OS/arch are needed.
-3. If the aim isn't met, undo the changes and continue from step 1
+8. If the aim isn't met, continue try again from step 1 (if any more modification can be done) OR let us know the results of the observation
